@@ -57,7 +57,7 @@ server.put('/projects/:id', checkExistence, (req, res) => {
 //Deletar Projeto
 server.delete('/projects/:id', checkExistence, (req, res) => {
   const { id } = req.params;
-  projects.splice(projects.indexOf(projects.find(project => project.id == id)), 1);
+  projects.splice(projects.findIndex(project => project.id == id), 1);
   return res.json(projects);
 });
 
